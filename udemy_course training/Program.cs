@@ -13,7 +13,7 @@ namespace udemy_course_training
             string s1 = "1";
             int num2 = Int32.Parse(s1);
             Console.WriteLine(num2);
-
+            Console.ReadLine();
         }
     }
 }
