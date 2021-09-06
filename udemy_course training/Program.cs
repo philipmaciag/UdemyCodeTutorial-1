@@ -1,19 +1,30 @@
 ﻿using System;
 
-namespace udemy_course_training
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //main 
-            int num1 = 10;
-            string i = num1.ToString();
-            Console.WriteLine(i);
-            string s1 = "1";
-            int num2 = Int32.Parse(s1);
-            Console.WriteLine(num2);
+
+namespace Udemy_course {
+
+class Program {
+        
+        static void Main(string[] args) {
+           
+            Console.WriteLine("Write your name and press enter.");
+            var Name = Console.ReadLine();
+            
+            Console.WriteLine(Name.ToUpper());
+            Console.WriteLine(Name.ToLower());
+            Console.WriteLine(Name.Trim());
+            Console.WriteLine(Name.Substring(2));
+            Console.Read();
+
+
 
         }
-    }
-}
+    
+    };
+
+
+
+
+
+
+};
