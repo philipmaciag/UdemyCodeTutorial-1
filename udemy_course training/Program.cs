@@ -2,45 +2,43 @@
 
 
 namespace Udemy_course {
-static class Extend
-    {
 
-        public static string CapitaliseFirst(this string x)
+    class Program
+    {
+       static void Main(string[] args)
         {
-            var firstLetterOfFirstName = x.Substring(0, 1);
-            firstLetterOfFirstName = firstLetterOfFirstName.ToUpper();
-            var restOfLettersInFirstName = x.Substring(1);
-            var BetterFirstName = firstLetterOfFirstName + restOfLettersInFirstName;
-            return BetterFirstName;
+            Cool();
+
+
+
+
+
+        }
+        public static void Cool()
+        {
+            Console.WriteLine("enter a number");
+            string input1 = Console.ReadLine();
+            Console.WriteLine("enter a Second number");
+            string input2 = Console.ReadLine();
+            Double num1 = int.Parse(input1);
+            Double num2 = int.Parse(input2);
+            double Result = num1 + num2;
+            Console.WriteLine(Result);
+            Console.Read();
+
+
         }
 
 
 
 
     }
-class Program {
-        
-        static void Main(string[] args) {
-           
-            Console.WriteLine("Write a String and press enter.");
-            var mystring = Console.ReadLine();
-            Console.WriteLine("enter a character to search");
-            char my_second_string = (char)Console.Read();
-            Console.ReadLine();
-            Console.WriteLine(mystring.IndexOf(my_second_string));
-            Console.WriteLine("Enter your first Name");
-            var firstName = Console.ReadLine();
-            Console.WriteLine("Enter your last Name");
-            var lastName = Console.ReadLine();
 
-            Console.WriteLine(firstName.CapitaliseFirst());
-            Console.WriteLine(lastName.CapitaliseFirst());
-            Console.Read();
-        }
+        
 
         
     
-    };
+    
 
 
 
