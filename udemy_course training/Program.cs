@@ -1,64 +1,69 @@
 ﻿using System;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 
-namespace Udemy_course {
+namespace Udemy_course
+{
 
     class Program
     {
-       static void Main(string[] args)
+
+        static void Main(string[] args)
         {
-            Console.WriteLine("Hello, write a Username to register it");
-            string Username = Console.ReadLine();
-            Console.WriteLine("enter a password and end registering");
-            string Password = Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("initializing...");
-            Thread.Sleep(5000);
-           
-            Console.Clear();
-            Console.WriteLine("enter your username:");
-            string loggedUsername = Console.ReadLine();
-            if (loggedUsername == Username)
+
+            try
             {
-                Console.WriteLine("Enter password");
-                string loggedPassword = Console.ReadLine();
-                if(loggedPassword == Password)
+                string score = string.Empty;
+                string all = string.Empty;
+                do
                 {
-                    Console.Clear();
-                    Console.WriteLine("Logging in...");
-                    Thread.Sleep(5000);
-                    Console.Clear();
-                    Console.WriteLine("you are logged in");
+                    Console.WriteLine("enter a students name");
+                    var studentsName = Console.ReadLine();
+                    Console.WriteLine("enter the score");
+                    var scoreLine = Console.ReadLine();
+                    Console.WriteLine("Do you want to exit (Y|N)");
+                    var exitAnswer = Console.ReadLine();
+                    score += int.Parse(scoreLine) + " ";
+                    all += studentsName + " ";
 
-                }
+                    if (exitAnswer == "Y")
+                    {
+                        break;
+                    }
 
+                } while (all.Length < 20);
 
+                Console.WriteLine(all);
+                Console.WriteLine(score);
+                int NewScore = int.Parse(score); 
+                Console.WriteLine(NewScore);
 
-            };
+            }
+            catch (Exception)
+            {
+                
+             
+            }
+            
             Console.Read();
 
-
-
-
-
-
         }
 
-        private static void EventWaitHandle()
-        {
-            throw new NotImplementedException();
-        }
     }
 
-        
 
-        
-    
-    
+}
 
 
 
 
 
 
-};
+
+
+
+
+
+
