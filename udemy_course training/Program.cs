@@ -13,45 +13,67 @@ namespace Udemy_course
 
         static void Main(string[] args)
         {
-            for (int i = 0; i < 2; i++) {
-            Console.WriteLine("enter your gun name");
-            string GN = Console.ReadLine();
-            Console.WriteLine("enter your gun damage");
-            string GD = Console.ReadLine();
-            Console.WriteLine("enter your gun speed");
-            string GS = Console.ReadLine();
-            int GDI;
-            int GSI;
-            bool t = int.TryParse(GD, out GDI);
-            if (t)
+            Console.WriteLine("Write something");
+            string input = Console.ReadLine();
+            Console.WriteLine("what sort of datatype do you want Press 1 for String Press 2 for integer Press 3 for Boolean");
+            string input1 = Console.ReadLine();
+            int input2 = int.Parse(input1);
+            var inputedType = GuessType(input);
+            switch (input2)
             {
-                GDI = int.Parse(GD);
-            } else
-            {
-                throw new ArgumentException("Gun Damage is a Word/Letter");
+                case 1:
+                    Console.WriteLine(input2);
+                    break;
+
+                case 2:
+                    if (inputedType == typeof(int))
+                    {
+                        Console.WriteLine(input);
+                        Console.WriteLine("You Have entered a valid intiger");
+                    }
+                        
+                    else
+                    {
+                        Console.WriteLine("you Have entered a non-valid intiger");
+                    }
+                    break;
+
+                case 3:
+                    if (inputedType == typeof(bool))
+                    {
+                        Console.WriteLine(input);
+                        Console.WriteLine("you have entered a valid bool");
+
+                    } else
+                    {
+                        Console.WriteLine("you have entered a non-valid bool");
+
+                    }
+                        break;
+
+                
 
 
             }
 
-            bool t2 = int.TryParse(GS, out GSI);
-            if (t2)
+            static Type GuessType(string input)
             {
-                GSI = int.Parse(GS);
+                if (int.TryParse(input, out var n))
+                {
+                    return typeof(int);
+                } else if(bool.TryParse(input, out var b))
+                {
+                    return typeof(bool);
+                }else
+                {
+                    return typeof(string);
 
-            } else
-            {
-                throw new ArgumentException("Gun Speed is a Word/Letter");
+                }
+
 
             }
 
-                Gun g + i.ToString() = new Gun(GN, GDI, GSI);
-            g.DisplayInfo();
-               
-            }
-            
-            
-            
-            
+
 
         }
 
